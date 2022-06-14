@@ -1,0 +1,15 @@
+#!/bin/bash
+## 当前目录
+BASEDIR=$(cd "$(dirname "$0")";pwd) ;
+TIMESTAMP=$(date +"%Y%m%d%H%M%S")
+
+git checkout release
+
+npm run build
+
+\cp -rf $BASEDIR/../src/docs/* $BASEDIR/../docs/
+
+git add .
+git commit -m "release-$TIMESTAMP"
+
+git push origin release

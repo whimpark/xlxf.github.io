@@ -9,8 +9,7 @@
   "scripts": {
     "dev": "vitepress dev src",
     "build": "vitepress build src",
-    "clean": "rm -rf ./docs/*",
-    "deploy": "npm run clean && npm run build",
+    "release": "sh ./bin/release ",
     "serve": "vitepress serve src"
   }
 }
