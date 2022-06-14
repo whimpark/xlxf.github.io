@@ -2,12 +2,11 @@
 const { getFeSideBar } = require('./sidebar/FeSideBar.js')
 const { getBeJavaSideBar,getBeSpringSideBar,getBeBusinessSideBar } = require('./sidebar/BeSideBar.js')
 const { getArchSideBar } = require('./sidebar/ArchSideBar.js') 
-import GLOBAL from "./global.js"
 
 module.exports = {
     title: 'xlxf.cn',
     description: '学习记录，欢迎指正',
-    base: GLOBAL.base,
+    base: '/',
     themeConfig: {
         nav: [
             { text: '首页', link: '/' },
