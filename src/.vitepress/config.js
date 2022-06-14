@@ -1,17 +1,18 @@
 
 const { getFeSideBar } = require('./sidebar/FeSideBar.js')
-const { getBeJavaSideBar,getBeSpringSideBar,getBeBusinessSideBar } = require('./sidebar/BeSideBar.js')
-const { getArchSideBar } = require('./sidebar/ArchSideBar.js') 
+const { getBeJavaSideBar, getBeSpringSideBar, getBeBusinessSideBar } = require('./sidebar/BeSideBar.js')
+const { getArchSideBar } = require('./sidebar/ArchSideBar.js')
 
 module.exports = {
     title: 'xlxf.cn',
-    description: '学习记录，欢迎指正',
+    description: 'xlxf',
     base: '/',
+    outDir: '../docs',
     themeConfig: {
         nav: [
             { text: '首页', link: '/' },
             {
-                text: '前端知识',  items: [
+                text: '前端知识', items: [
                     { text: '前端基础', link: '/fe/', activeMatch: '/fe/' },
                     { text: 'NodeJS', link: '/fe/nodejs/', activeMatch: '/fe/nodejs/' },
                     { text: 'VueJS', link: '/fe/vuejs/', activeMatch: '/fe/vuejs/' },
@@ -20,7 +21,7 @@ module.exports = {
             },
             {
                 text: '后端知识', items: [
-                    { text: '后端基础', link: '/be/', activeMatch: '/be/' },
+                    { text: '后端概览', link: '/be/', activeMatch: '/be/' },
                     { text: 'Java', link: '/be/java/', activeMatch: '/be/java/' },
                     { text: 'Spring', link: '/be/spring/', activeMatch: '/be/spring/' },
                     { text: '业务场景', link: '/be/business/', activeMatch: '/be/business/' },
@@ -34,14 +35,18 @@ module.exports = {
                 ]
             }
         ],
-        
+
         // 侧边导航
         sidebar: {
             '/fe/': getFeSideBar(),
             '/be/java/': getBeJavaSideBar(),
             '/be/spring/': getBeSpringSideBar(),
             '/be/business/': getBeBusinessSideBar(),
-            '/arch/': getArchSideBar(), 
+            '/arch/': getArchSideBar(),
+        },
+        footer: {
+            message: 'Released under the MIT License.',
+            copyright: 'Copyright © 2022-present xlxf.cn'
         }
     },
 }

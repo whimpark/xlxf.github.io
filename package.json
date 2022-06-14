@@ -8,7 +8,9 @@
   },
   "scripts": {
     "dev": "vitepress dev src",
-    "build": "vitepress build src && rm -rf ./docs/* && mv src/.vitepress/dist/* ./docs/",
+    "build": "vitepress build src",
+    "clean": "rm -rf ./docs/*",
+    "deploy": "npm run clean && npm run build",
     "serve": "vitepress serve src"
   }
 }
