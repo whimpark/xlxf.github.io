@@ -5,11 +5,14 @@ TIMESTAMP=$(date +"%Y%m%d%H%M%S")
 
 git checkout release
 
+git merge master
+
 npm run build
 
 \cp -rf $BASEDIR/../src/docs/* $BASEDIR/../docs/
 
 git add .
+
 git commit -m "release-$TIMESTAMP"
 
 git push origin release
