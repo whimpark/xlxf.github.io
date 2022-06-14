@@ -13,3 +13,5 @@ git add .
 git commit -m "release-$TIMESTAMP"
 
 git push origin release
+
+git checkout master
