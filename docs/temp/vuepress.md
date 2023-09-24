@@ -1,5 +1,5 @@
 ---
-title: Blogging Like a Hacker
+title: vuepress
 lang: en-US
 ---
 
