@@ -1,6 +1,6 @@
 module.exports = {
-    title: '西岭项目',
-    base:"/dist/",
+    title: '小鹿学坊',
+    base:"/",
     description: 'love movies',
     configureWebpack: {
         resolve: {
@@ -16,7 +16,7 @@ module.exports = {
         displayAllHeaders: true, // 默认值：false
         sidebar: [
             {
-              title: '项目文章',
+              title: '鹿坊文章',
               path: '/article/content',
               collapsable: false, // 可选的, 默认值是 true,
               sidebarDepth: 0,    // 可选的, 默认值是 1
@@ -36,7 +36,7 @@ module.exports = {
               ],
             },
             {
-              title: '项目笔记',
+              title: '鹿坊笔记',
               path: '/note/index',
               collapsable: false, // 可选的, 默认值是 true,
               sidebarDepth: 0,    // 可选的, 默认值是 1
