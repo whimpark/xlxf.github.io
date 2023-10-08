@@ -1,7 +1,19 @@
 module.exports = {
     title: '小鹿学坊',
     base:"/",
-    description: 'love movies',
+    description: '一个与时俱进的互联网学习空间',
+    head: [
+      [
+        "script",
+        {
+          "client": "ca-pub-6579111049316949",
+          async: true,
+          crossorigin: "anonymous",
+          src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6579111049316949"
+        }
+      ]
+    ],
+ 
     configureWebpack: {
         resolve: {
             alias: {
