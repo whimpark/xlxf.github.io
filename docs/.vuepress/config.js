@@ -48,14 +48,14 @@ module.exports = {
             //   ],
             // },
             {
-              title: '鹿坊笔记',
+              title: '小鹿笔记',
               path: '/note/index',
               collapsable: false, // 可选的, 默认值是 true,
               sidebarDepth: 0,    // 可选的, 默认值是 1
               children: [
-                "/note/997-231008-stock",
-                "/note/997-231008-idea",
+                "/note/996-231008-stock",
                 '/note/997-231008-vuepress', 
+                "/note/997-231008-idea",
               ],
             }
           ]
