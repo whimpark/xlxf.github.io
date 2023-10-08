@@ -53,6 +53,7 @@ module.exports = {
               collapsable: false, // 可选的, 默认值是 true,
               sidebarDepth: 0,    // 可选的, 默认值是 1
               children: [
+                "/note/996-231008-seo",
                 "/note/996-231008-stock",
                 '/note/997-231008-vuepress', 
                 "/note/997-231008-idea",
