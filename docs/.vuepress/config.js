@@ -1,5 +1,5 @@
 module.exports = {
-    title: 'XLXM',
+    title: '西岭项目',
     base:"/dist/",
     description: 'love movies',
     configureWebpack: {
@@ -16,24 +16,33 @@ module.exports = {
         displayAllHeaders: true, // 默认值：false
         sidebar: [
             {
-              title: 'Group 1',   // 必要的
-              path: '/foo/',      // 可选的, 标题的跳转链接，应为绝对路径且必须存在
+              title: '项目文章',
+              path: '/article/content',
               collapsable: false, // 可选的, 默认值是 true,
-              sidebarDepth: 1,    // 可选的, 默认值是 1
-              children: [
-                '/',
-                '/web/vuepress'
-              ]
+              sidebarDepth: 0,    // 可选的, 默认值是 1
+              children: [ 
+                {
+                  title: '百度',
+                  path: '/article/baidu/content',
+                  collapsable: false, // 可选的, 默认值是 true,
+                  sidebarDepth: 0,    // 可选的, 默认值是 1
+                  children: [ 
+                    '/article/baidu/997-231008-baidu-ad', 
+                    '/article/baidu/997-231008-baidu-bjh',  
+                  ],
+                }, 
+                '/article/google/content',  
+                '/article/weixin/content',  
+              ],
             },
             {
-              title: '未分类文章',
-              path: '/temp/',   
+              title: '项目笔记',
+              path: '/note/index',
               collapsable: false, // 可选的, 默认值是 true,
-              sidebarDepth: 1,    // 可选的, 默认值是 1
+              sidebarDepth: 0,    // 可选的, 默认值是 1
               children: [
-                '/', 
-                '/temp/readme2',
-                '/temp/vuepress'
+                "/note/test/997-231008-idea",
+                '/note/997-231008-vuepress', 
               ],
             }
           ]
