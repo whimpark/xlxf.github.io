@@ -1,6 +1,6 @@
 ---
 title: 百度
-lang: en-US
+lang: zh-CN
 ---
 
 

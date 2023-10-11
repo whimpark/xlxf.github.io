@@ -1,6 +1,6 @@
 ---
 title: 项目文章
-lang: en-US
+lang: zh-CN
 ---
 
 

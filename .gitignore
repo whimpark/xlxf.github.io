@@ -12,11 +12,16 @@ pnpm-lock.yaml
 # vscode
 .vscode
 
-# vuepress
+# vuepress & vitepress
 docs/.vuepress/dist
+docs/.vitepress/dist
+docs/.vitepress/cache
 
 # 百度链接推送
 urls.txt
 
 # mac
 .DS_Store
+
+#  
+

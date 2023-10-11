@@ -1,6 +1,6 @@
 ---
 title: 谷歌
-lang: en-US
+lang: zh-CN
 ---
 ## 谷歌
 

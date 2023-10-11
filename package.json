@@ -4,6 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "dev": "vitepress dev docs ",
+    "build": "vitepress build docs",
+    "serve": "vitepress serve docs",
+    
     "docs:dev": "vuepress dev docs",
     "docs:build": " set NODE_OPTIONS=--openssl-legacy-provider && vuepress build docs",
     "docs:build:linux": " export NODE_OPTIONS=--openssl-legacy-provider && vuepress build docs",
@@ -12,6 +16,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "vuepress": "^1.9.10"
+    "vitepress": "^1.0.0-rc.20"
   }
 }

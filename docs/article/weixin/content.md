@@ -1,6 +1,6 @@
 ---
 title: 微信
-lang: en-US
+lang: zh-CN
 ---
 ## 谷歌
 
