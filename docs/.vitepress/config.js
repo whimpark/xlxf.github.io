@@ -100,14 +100,17 @@ function getEnglishThemeConfig(){
 
  
 module.exports = {
+    lang: "zh",
     base:"/",
     lastUpdated: false,
     appearance: "light", 
 
-    rewrites: {
-      'index.md': '/zh/index.md'
-    },
     locales: {
+      root: { 
+        title: '小鹿学坊',
+        description: '一个与时俱进的互联网学习空间',
+        themeConfig: getChineseThemeConfig()
+      },
       "zh": {
         label: '中文', 
         title: '小鹿学坊',
