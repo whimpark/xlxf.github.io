@@ -1,5 +1,6 @@
 ---
 layout: doc
+title: 首页
 sidebar: false
 footer: true
 prev: false

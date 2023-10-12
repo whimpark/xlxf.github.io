@@ -1,9 +1,9 @@
 module.exports = {
-    // lang: "zh-CN",
+    lang: "zh-CN",
     title: '小鹿学坊',
     base:"/",
     description: '一个与时俱进的互联网学习空间',
-    lastUpdated: true,
+    lastUpdated: false,
     appearance: "light", 
     head: [
       [
@@ -21,6 +21,7 @@ module.exports = {
         lineNumbers: true
     },
     themeConfig: {
+        logo: '/favicon.svg',
         aside: true,
         outline: {
           level: "deep",
@@ -28,19 +29,19 @@ module.exports = {
         },  
         lastUpdatedText: "最近更新",  
         nav: [
-          { text: '首页', link: '/index' },
-          { text: '关于我们', link: '/site/about' },
+          { text: '首页', link: '/index' }, 
           {
-            text: '技术文章',
+            text: '学坊笔记',
             items: [
-              {
-                // Title for the section.
-                text: '站点建设',
-                items: [
-                  { text: 'VitePress', link: '/note/997-231008-vitepress' },
-                  { text: 'VuePress', link: '/note/997-231008-vuepress' }
-                ]
-              }
+              { text: '发展构思', link: '/note/997-231008-idea' },
+              { text: '股票预测', link: '/note/996-231008-stock' }, 
+              { text: 'VuePress', link: '/note/997-231008-vuepress' }
+            ]
+          },
+          {
+            text: '最新资讯',
+            items: [
+              { text: '国际冲突', link: '/news/999-231012-war' }, 
             ]
           }
         ],
@@ -60,7 +61,7 @@ module.exports = {
           // }
           
           {
-            text: '小鹿笔记',
+            text: '学坊笔记',
             items: [
               { link: '/note/996-231008-stock',text: '股票预测' }, 
               { link: '/note/996-231008-seo',text: '广告联盟' },
@@ -75,8 +76,8 @@ module.exports = {
         //   { icon: 'github', link: 'https://github.com/whimpark/xlxf.github.io' }
         // ],
         footer: {
-          message: 'ICP备案',
-          copyright: 'Copyright © 2018-present xlxf.cn'
+          message: '<a href="/site/about.html">关于我们</a> | <a href="/site/contact.html">联系我们</a>',
+          copyright: 'Copyright © 2018-present xlxf.cn ICP备案 '
         },
         search: {
           provider: 'local'
