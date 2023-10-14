@@ -18,9 +18,9 @@ function getChineseThemeConfig(){
         ]
       },
       {
-        text: '最新资讯',
+        text: '热点资讯',
         items: [
-          { text: '国际冲突', link: '/zh/news/999-231012-war' }, 
+          { text: '国际资讯', link: '/zh/news/wikipedia/index' }, 
         ]
       }
     ],
@@ -68,7 +68,7 @@ function getEnglishThemeConfig(){
       {
         text: 'News',
         items: [
-          { text: 'International Conflict', link: '/en/news/999-231012-war' }, 
+          { text: 'International News', link: '/en/news/wikipedia/index' }, 
         ]
       }
     ],
