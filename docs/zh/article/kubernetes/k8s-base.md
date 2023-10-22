@@ -126,6 +126,12 @@ CPU 总是一个绝对数量，而不是相对数量（比如 40% 的 CPU），�
 ## registry.cn-hangzhou.aliyuncs.com/xlxwhy/cloudx-mall-node
 
 kubectl create secret docker-registry secret-xlxdata --docker-server= registry: registry.cn-hangzhou.aliyuncs.com --docker-username=xlxdata --docker-password=data1234 --docker-email=xx@qq.com
+
+ 
+docker  login  registry.cn-hangzhou.aliyuncs.com  --username=hi35449892@aliyun.com
+
+cat ~/.docker/config.json  |base64 -w 0
+
 ```
 
 ```yaml
@@ -142,13 +148,8 @@ spec:
     - name: docker-aliyun-secret
 
 ```
+
  
-docker  login  registry.cn-hangzhou.aliyuncs.com  --username=hi35449892@aliyun.com
-
-cat ~/.docker/config.json  |base64 -w 0
-
-eyJhbGciOiJSUzI1NiIsImtpZCI6IlNxek5qbUZjVnVmM0F2d1MtT1V4RVZBSFV5Z25fbTU2WjRXNDZIT05ic28ifQ.eyJpc3MiOiJrdWJlcm5ldGVzL3NlcnZpY2VhY2NvdW50Iiwia3ViZXJuZXRlcy5pby9zZXJ2aWNlYWNjb3VudC9uYW1lc3BhY2UiOiJrdWJlLXN5c3RlbSIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VjcmV0Lm5hbWUiOiJhZG1pbi10b2tlbi1oZGY0biIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50Lm5hbWUiOiJhZG1pbiIsImt1YmVybmV0ZXMuaW8vc2VydmljZWFjY291bnQvc2VydmljZS1hY2NvdW50LnVpZCI6IjZmNDE3ZDMzLTg0MTgtNDhlMi1iNjVhLTM2NWUzMWVlYzYzYiIsInN1YiI6InN5c3RlbTpzZXJ2aWNlYWNjb3VudDprdWJlLXN5c3RlbTphZG1pbiJ9.H0mk3cGFouJSNmJUhIuIyZX0qg7laKcEVuGJlLfJD7ijGR65eB78Hcag3QBy0-nn7xxmeeYICzoojdTN7QRz2OwQpBCG5nY3LunqysYaEbfjzdG73F0pkdWq2rt0GAW5hDCIwtayPaLsHB_P_zu-ErcxAk4xkdsZzMQuHR9QTv1Plp9t5nhyKXb-zZTrT7UxsgTWv2hzJFRa0QruJu0FnuGu-pa5G-DlhzbOxxuFalKuz8-bV_NFw8ggVfKDxlFFqUO6k-80ASzs5X-fumTBU8kB7Y_Wc1q_afSt-nglJIbcEKV63qJM6hzcIs4itga3W3RBmGR3tMBal4rEam9CeQ
-
 
 ## 安装部署
 
@@ -161,60 +162,7 @@ kubectl apply
 
 
 
-
-## 案例数据
-Master端口使用情况
-```bash
-[root@k8s-master ~]# netstat -lntp
-Active Internet connections (only servers)
-Proto Recv-Q Send-Q Local Address           Foreign Address         State       PID/Program name
-tcp        0      0 127.0.0.1:10257         0.0.0.0:*               LISTEN      111481/kube-control
-tcp        0      0 0.0.0.0:30001           0.0.0.0:*               LISTEN      79996/kube-proxy
-tcp        0      0 127.0.0.1:10259         0.0.0.0:*               LISTEN      111813/kube-schedul
-tcp        0      0 0.0.0.0:22              0.0.0.0:*               LISTEN      926/sshd
-tcp        0      0 127.0.0.1:25            0.0.0.0:*               LISTEN      1111/master
-tcp        0      0 127.0.0.1:10248         0.0.0.0:*               LISTEN      79534/kubelet
-tcp        0      0 127.0.0.1:10249         0.0.0.0:*               LISTEN      79996/kube-proxy
-tcp        0      0 192.168.3.11:2379       0.0.0.0:*               LISTEN      79134/etcd
-tcp        0      0 127.0.0.1:2379          0.0.0.0:*               LISTEN      79134/etcd
-tcp        0      0 192.168.3.11:2380       0.0.0.0:*               LISTEN      79134/etcd
-tcp        0      0 127.0.0.1:2381          0.0.0.0:*               LISTEN      79134/etcd
-tcp        0      0 127.0.0.1:34448         0.0.0.0:*               LISTEN      79534/kubelet
-tcp6       0      0 :::22                   :::*                    LISTEN      926/sshd
-tcp6       0      0 ::1:25                  :::*                    LISTEN      1111/master
-tcp6       0      0 :::10250                :::*                    LISTEN      79534/kubelet
-tcp6       0      0 :::6443                 :::*                    LISTEN      79182/kube-apiserve
-tcp6       0      0 :::10256                :::*                    LISTEN      79996/kube-proxy
-Pod列表
-[root@k8s-master ~]# kubectl get pod -A
-NAMESPACE              NAME                                         READY   STATUS    RESTARTS   AGE
-kube-system            coredns-6d56c8448f-c69rw                     1/1     Running   0          14h
-kube-system            coredns-6d56c8448f-c6wzk                     1/1     Running   0          14h
-kube-system            etcd-k8s-master                              1/1     Running   0          14h
-kube-system            kube-apiserver-k8s-master                    1/1     Running   0          14h
-kube-system            kube-controller-manager-k8s-master           1/1     Running   4          14h
-kube-system            kube-flannel-ds-amd64-lgffl                  1/1     Running   0          14h
-kube-system            kube-flannel-ds-amd64-zqrcz                  1/1     Running   0          14h
-kube-system            kube-proxy-h744s                             1/1     Running   0          14h
-kube-system            kube-proxy-wk5cq                             1/1     Running   0          14h
-kube-system            kube-scheduler-k8s-master                    1/1     Running   5          14h
-kubernetes-dashboard   dashboard-metrics-scraper-7b59f7d4df-tw6zr   1/1     Running   0          14h
-kubernetes-dashboard   kubernetes-dashboard-5dbf55bd9d-sqxnk        1/1     Running   0          14h
-
-Service
-[root@k8s-master ~]# kubectl get service -A
-NAMESPACE            NAME                    TYPE       CLUSTER-IP   EXTERNAL-IP   PORT(S)             AGE
-default                 kubernetes                ClusterIP   10.20.0.1      <none>        443/TCP             15h
-kube-system           kube-dns                  ClusterIP   10.20.0.10     <none>    53/UDP,53/TCP,9153/TCP  15h
-kubernetes-dashboard  dashboard-metrics-scraper ClusterIP   10.20.188.175  <none>        8000/TCP            15h
-kubernetes-dashboard  kubernetes-dashboard     NodePort  10.20.250.117  <none>        443:30001/TCP      15h
-
-[root@k8s-master ~]# kubectl get node
-NAME          STATUS   ROLES    AGE   VERSION
-k8s-master    Ready    master   15h   v1.19.0
-k8s-node-12   Ready    <none>   15h   v1.19.0
-```
-
+ 
 
 ## Flannel
 https://blog.csdn.net/u011394397/article/details/54584819
@@ -238,7 +186,6 @@ CNI Network（node2）: 192.168.1.x
 
 解决办法来自GitHub：https://github.com/kubernetes/dashboard/issues/3472
 
- 
 
 resolved:
 - mkdir certs
