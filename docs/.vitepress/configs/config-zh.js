@@ -12,6 +12,8 @@ module.exports = {
       text: '学坊笔记',
       items: [
         { text: 'Elasticsearch', link: '/zh/article/elasticsearch/elasticsearch-guifan' },
+        { text: 'Kafka', link: '/zh/article/kafka/kafka-base' },
+        { text: 'Java', link: '/zh/article/java/jdk-performance' },
         { text: '发展构思', link: '/zh/note/997-231008-idea' },
         { text: '股票预测', link: '/zh/note/996-231008-stock' },
         { text: 'VuePress', link: '/zh/note/997-231008-vuepress' }
@@ -35,6 +37,20 @@ module.exports = {
             items: [
               { link: '/zh/article/elasticsearch/elasticsearch-guifan', text: '基本规范' },
               { link: '/zh/article/elasticsearch/elasticsearch-guihua', text: '资源规划' }, 
+              { link: '/zh/article/elasticsearch/elasticsearch-config', text: '核心配置' }, 
+              { link: '/zh/article/elasticsearch/elasticsearch-client', text: '客户端' },
+            ]
+          },
+          {
+            text: 'Kafka',
+            items: [
+              { link: '/zh/article/kafka/kafka-base', text: '基础知识' }, 
+            ]
+          },
+          {
+            text: 'Java',
+            items: [
+              { link: '/zh/article/java/jdk-performance', text: 'JDK性能分析' }, 
             ]
           },
           { link: '/zh/note/996-231008-stock', text: '股票预测' },
