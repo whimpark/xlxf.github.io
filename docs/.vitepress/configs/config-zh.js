@@ -14,9 +14,9 @@ module.exports = {
         { text: 'Elasticsearch', link: '/zh/article/elasticsearch/elasticsearch-guifan' },
         { text: 'Kafka', link: '/zh/article/kafka/kafka-base' },
         { text: 'Java', link: '/zh/article/java/jdk-performance' },
+        { text: 'Kubernetes' , link: '/zh/article/kubernetes/k8s-base',}, 
         { text: '发展构思', link: '/zh/note/997-231008-idea' },
-        { text: '股票预测', link: '/zh/note/996-231008-stock' },
-        { text: 'VuePress', link: '/zh/note/997-231008-vuepress' }
+        { text: '股票预测', link: '/zh/note/996-231008-stock' }
       ]
     },
     {
@@ -51,6 +51,12 @@ module.exports = {
             text: 'Java',
             items: [
               { link: '/zh/article/java/jdk-performance', text: 'JDK性能分析' }, 
+            ]
+          },
+          {
+            text: 'Kubernetes',
+            items: [
+              { link: '/zh/article/kubernetes/k8s-base', text: '基础概念' }, 
             ]
           },
           { link: '/zh/note/996-231008-stock', text: '股票预测' },
