@@ -1,0 +1,98 @@
+[
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/douban.jpg",
+        "name": " 豆瓣",
+        "link": "https://www.douban.com/",
+        "title": " 提供图书、电影、音乐唱片的推荐、评论和价格比较，以及城市独特的文化生活"
+    },
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/zhihu.png",
+        "name": " 知乎",
+        "link": "https://www.zhihu.com/",
+        "title": " 坐标美国，平均薪资百万，质量还行的问答社区。"
+    },
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/weibo.png",
+        "name": " 微博",
+        "link": "https://weibo.com/",
+        "title": " 一个发生热门事件就宕机的网站。"
+    },
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/toutiao.png",
+        "name": " 今日头条",
+        "link": "https://www.toutiao.com/",
+        "title": " 致力于连接人与信息，内容丰富。"
+    },
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/douyin.jpg",
+        "name": " 抖音",
+        "link": "https://www.douyin.com/",
+        "title": " 有很多跳舞和讲成功学短视频内容。"
+    },
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/kuaishou.jpg",
+        "name": " 快手",
+        "link": "https://www.kuaishou.com/",
+        "title": " 很多讲段子的短视频内容。"
+    },
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/xiaohongshu.jpg",
+        "name": " 小红书",
+        "link": "https://www.xiaohongshu.com/explore",
+        "title": " 分享生活经验、发现美好、真实、多元的世界。"
+    },
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/jianshu.png",
+        "name": " 简书",
+        "link": "https://www.jianshu.com/",
+        "title": " 优质的内容创作社区。"
+    },
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/xueqiu.png",
+        "name": " 雪球",
+        "link": "https://xueqiu.com/",
+        "title": " 韭菜常用社区。"
+    },
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/hupu.png",
+        "name": " 虎扑",
+        "link": "https://www.hupu.com/",
+        "title": " 体育赛事社区网站。"
+    },
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/tieba.png",
+        "name": " 百度贴吧",
+        "link": "https://tieba.baidu.com/",
+        "title": " 各种话题互撕。"
+    },
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/bilibili-logo.png",
+        "name": " 哔哩哔哩",
+        "link": "https://www.bilibili.com/",
+        "title": " 视频弹幕网站"
+    },
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/iqy-logo.jpeg",
+        "name": " 爱奇艺",
+        "link": "https://www.iqiyi.com/",
+        "title": " 每年都亏损的视频内容站"
+    },
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/xigua-logo.jpeg",
+        "name": " 西瓜视频",
+        "link": "https://www.ixigua.com/",
+        "title": " 广告相对少一点的视频站"
+    },
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/txv-logo.jpeg",
+        "name": " 腾讯视频",
+        "link": "https://v.qq.com/",
+        "title": " 广告挺长的视频网站"
+    },
+    {
+        "logo": "https://c.runoob.com/wp-content/uploads/2022/04/yk-logo.png",
+        "name": " 优酷",
+        "link": "https://www.youku.com/",
+        "title": " 视频看一半会弹出广告"
+    }
+]
