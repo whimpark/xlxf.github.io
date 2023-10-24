@@ -17,6 +17,8 @@ docs/.vuepress/dist
 docs/.vitepress/dist
 docs/.vitepress/cache
 
+.vitepress/dist/
+
 # 百度链接推送
 urls.txt
 
