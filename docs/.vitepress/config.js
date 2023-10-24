@@ -8,7 +8,7 @@ module.exports = {
     base:"/",
     lastUpdated: false,
     appearance: "light", 
-
+    ignoreDeadLinks: true,
     locales: {
       root: { 
         title: '小鹿学坊',

@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build:document:vitejs": "sh ./bin/build-document.sh vitejs ", 
+    "build:document:vitepress": "sh ./bin/build-document.sh vitepress ", 
     "dev": "vitepress dev docs ", 
     "collect:wikipedia:dev": " node src/wikipedia/collect.js  --date=2023/10/14  && npm run dev",
     "collect:wikipedia:latest": " node src/wikipedia/collect.js --latest=true",
@@ -18,6 +19,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "markdown-it-mathjax3": "^4.3.2",
     "axios": "^1.5.1",
     "google-translate-api": "^2.3.0", 
     "minimist": "^1.2.8",

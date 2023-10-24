@@ -19,12 +19,13 @@ module.exports = {
         { text: '股票预测', link: '/zh/note/996-231008-stock' }
       ]
     },
-    {
-      text: '技术文档',
-      items: [
-        { text: 'vitejs', link: '/document/vitejs/guide/' },
-      ]
-    },
+    // {
+    //   text: '技术文档',
+    //   items: [
+    //     { text: 'ViteJS', link: '/zh/document/vitejs/guide/' },
+    //     { text: 'VitePress', link: '/zh/document/vitepress/guide/what-is-vitepress' },
+    //   ]
+    // },
     {
       text: '热点资讯',
       items: [
@@ -78,7 +79,22 @@ module.exports = {
       {
         text: '热点资讯',
         items: [
-          { link: '/zh/news/wikipedia/index', text: '百科资讯',  }, 
+          {
+            text: '百科资讯',
+            items: [ 
+              { link: '/zh/news/wikipedia/2023/10/wikipedia-20231013.md', text: '20231013' }, 
+              { link: '/zh/news/wikipedia/2023/10/wikipedia-20231012.md', text: '20231012' }, 
+            ]
+          },
+        ]
+      }
+    ],
+    "/zh/document/": [
+      {
+        text: '技术文档',
+        items: [
+          { text: 'ViteJS', link: '/zh/document/vitejs/guide/' },
+          { text: 'VitePress', link: '/zh/document/vitepress/guide/what-is-vitepress' },
         ]
       }
     ]
