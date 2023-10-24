@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build:document:vitejs": "sh ./bin/build-document.sh vitejs ", 
     "dev": "vitepress dev docs ", 
     "collect:wikipedia:dev": " node src/wikipedia/collect.js  --date=2023/10/14  && npm run dev",
     "collect:wikipedia:latest": " node src/wikipedia/collect.js --latest=true",

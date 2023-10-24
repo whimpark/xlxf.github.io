@@ -20,6 +20,12 @@ module.exports = {
       ]
     },
     {
+      text: '技术文档',
+      items: [
+        { text: 'vitejs', link: '/document/vitejs/guide/' },
+      ]
+    },
+    {
       text: '热点资讯',
       items: [
         { text: '百科资讯', link: '/zh/news/wikipedia/index' },

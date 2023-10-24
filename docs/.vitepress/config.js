@@ -62,9 +62,9 @@ module.exports = {
           "/en/": configEn
         },
 
-        socialLinks: [
-          { icon: 'github', link: 'https://github.com/whimpark/xlxf.github.io' }
-        ],
+        // socialLinks: [
+        //   { icon: 'github', link: 'https://github.com/whimpark/xlxf.github.io' }
+        // ],
         search: {
           provider: 'local'
         }

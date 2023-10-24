@@ -40,6 +40,7 @@ jobs:
       run: |
         npm install 
         npm run build
+        npm run build:document:vitejs
     - name: Setup Pages
       uses: actions/configure-pages@v2
     - name: Upload artifact
