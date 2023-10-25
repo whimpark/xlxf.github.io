@@ -1,7 +1,13 @@
+---
+layout: doc
+sidebar: false
+footer: true
+prev: false
+next: false 
+---
 
 
-
-## 关于我们
+# 关于我们
 
 至力于建设一个与时俱进的互联网学习空间。  
 

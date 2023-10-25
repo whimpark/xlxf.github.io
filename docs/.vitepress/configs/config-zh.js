@@ -100,7 +100,7 @@ module.exports = {
     ]
   },
   footer: {
-    message: '<a href="/zh/site/about.html">关于我们</a> | <a href="/zh/site/contact.html">联系我们</a>',
+    message: '<a href="/zh/site/about.html">关于我们</a> | <a href="/zh/site/contact.html">联系我们</a> | <a href="/zh/site/disclaimer.html">免责声明</a> | <a href="/zh/site/privacy.html">隐私条款</a>',
     copyright: 'Copyright © 2018-present xlxf.cn ICP备案 '
   },
   docFooter: { prev: "上一篇", next: "下一篇" }
