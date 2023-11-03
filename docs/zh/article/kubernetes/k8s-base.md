@@ -125,7 +125,7 @@ CPU 总是一个绝对数量，而不是相对数量（比如 40% 的 CPU），�
 ```bash
 ## registry.cn-hangzhou.aliyuncs.com/xlxwhy/cloudx-mall-node
 
-kubectl create secret docker-registry secret-xlxdata --docker-server= registry: registry.cn-hangzhou.aliyuncs.com --docker-username=xlxdata --docker-password=data1234 --docker-email=xx@qq.com
+kubectl create secret docker-registry secret-xlxdata --docker-server=registry:registry.cn-hangzhou.aliyuncs.com --docker-username=xlxdata --docker-password=xxxxxx  --docker-email=xx@qq.com
 
  
 docker  login  registry.cn-hangzhou.aliyuncs.com  --username=hi35449892@aliyun.com
