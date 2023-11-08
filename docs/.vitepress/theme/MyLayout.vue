@@ -25,7 +25,10 @@ const { Layout } = DefaultTheme
                 data-ad-format="auto"
                 data-full-width-responsive="true"></ins>
             <!-- <script> if (typeof window !== 'undefined') { (adsbygoogle = window.adsbygoogle || []).push({});  } </script> -->
-            <script>  (adsbygoogle = window.adsbygoogle || []).push({});  </script>
+            <!-- <script>  (adsbygoogle = window.adsbygoogle || []).push({});  </script> -->
+            <component :is="'script'">
+                 (adsbygoogle = window.adsbygoogle || []).push({});  
+            </component>
         </div>
     </template>
   </Layout>

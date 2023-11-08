@@ -48,7 +48,7 @@ module.exports = {
     },
     themeConfig: {
         logo: '/favicon.svg',
-        aside: true,
+        aside: false,
         outline: {
           level: "deep", 
         },    
