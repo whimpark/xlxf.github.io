@@ -9,12 +9,6 @@ const { page, frontmatter } = useData()
 
 const { Layout } = DefaultTheme
 
-// let  showAdContent = frontmatter.showAdContent
-// showAdContent =  (typeof showAdContent !== 'undefined') ? showAdContent: true
-// console.log("showAdContent", showAdContent);
-// console.log("frontmatter.showAdContent", frontmatter.showAdContent);
-console.log("frontmatter", frontmatter);
-
 
 </script>
 
@@ -22,10 +16,7 @@ console.log("frontmatter", frontmatter);
   <Layout>
     <template #doc-top>
         <div v-if="!frontmatter.hideAdContent">
-            <component :is="'script'">
-                    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6579111049316949"
-                        crossorigin="anonymous"></script>
-            </component>
+            <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6579111049316949" crossorigin="anonymous"></script>
             <!-- 模向广告 -->
             <ins class="adsbygoogle"
                 style="display:block"
@@ -33,9 +24,8 @@ console.log("frontmatter", frontmatter);
                 data-ad-slot="8705179855"
                 data-ad-format="auto"
                 data-full-width-responsive="true"></ins>
-            <component :is="'script'">
-                    if (typeof window !== 'undefined') { (adsbygoogle = window.adsbygoogle || []).push({});  }
-            </component>
+            <!-- <script> if (typeof window !== 'undefined') { (adsbygoogle = window.adsbygoogle || []).push({});  } </script> -->
+            <script>  (adsbygoogle = window.adsbygoogle || []).push({});  </script>
         </div>
     </template>
   </Layout>
