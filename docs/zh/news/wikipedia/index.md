@@ -1,3 +1,7 @@
+---
+hideAdContent: true
+---
+
 
 # 国际热点资讯
 

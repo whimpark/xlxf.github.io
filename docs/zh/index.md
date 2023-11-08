@@ -5,6 +5,7 @@ sidebar: false
 footer: true
 prev: false
 next: false 
+hideAdContent: true
 ---
 
 # 小鹿学坊

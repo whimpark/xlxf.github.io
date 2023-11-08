@@ -1,3 +1,8 @@
+---
+layout: doc
+hideAdContent: false
+---
+
 # Elasticsearch Client
 
 

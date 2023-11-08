@@ -1,6 +1,7 @@
 ---
 title: WebService
 lang: zh-CN
+hideAdContent: true
 ---
 
 
