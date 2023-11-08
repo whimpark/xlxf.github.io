@@ -1,4 +1,8 @@
 
+const BASEPATH="https://xlxf.cn"
+// const BASEPATH="http://localhost:5173"
+// const BASEPATH=""
+
 
 module.exports = {
   outline: {
@@ -7,29 +11,29 @@ module.exports = {
   lastUpdatedText: "最近更新",
 
   nav: [
-    { text: '首页', link: '/zh/index' },
+    { text: '首页', link: `${BASEPATH}/zh/index` },
     {
       text: '学坊笔记',
       items: [
-        { text: 'Elasticsearch', link: '/zh/article/elasticsearch/elasticsearch-guifan' },
-        { text: 'Kafka', link: '/zh/article/kafka/kafka-base' },
-        { text: 'Java', link: '/zh/article/java/jdk-performance' },
-        { text: 'Kubernetes' , link: '/zh/article/kubernetes/k8s-base',}, 
-        { text: '发展构思', link: '/zh/note/997-231008-idea' },
-        { text: '股票预测', link: '/zh/note/996-231008-stock' }
+        { text: 'Elasticsearch', link: `${BASEPATH}/zh/article/elasticsearch/elasticsearch-guifan` },
+        { text: 'Kafka', link: `${BASEPATH}/zh/article/kafka/kafka-base` },
+        { text: 'Java', link: `${BASEPATH}/zh/article/java/jdk-performance` },
+        { text: 'Kubernetes' , link: `${BASEPATH}/zh/article/kubernetes/k8s-base` }, 
+        { text: '发展构思', link: `${BASEPATH}/zh/note/997-231008-idea` },
+        { text: '股票预测', link: `${BASEPATH}/zh/note/996-231008-stock` }
       ]
     },
-    // {
-    //   text: '技术文档',
-    //   items: [
-    //     { text: 'ViteJS', link: '/zh/document/vitejs/guide/' },
-    //     { text: 'VitePress', link: '/zh/document/vitepress/guide/what-is-vitepress' },
-    //   ]
-    // },
+    {
+      text: '技术文档',
+      items: [
+        { text: 'ViteJS', link: `${BASEPATH}/document/vitejs/guide/` },
+        { text: 'VitePress', link: `${BASEPATH}/document/vitepress/guide/what-is-vitepress` },
+      ]
+    },
     {
       text: '热点资讯',
       items: [
-        { text: '百科资讯', link: '/zh/news/wikipedia/index' },
+        { text: '百科资讯', link: `${BASEPATH}/zh/news/wikipedia/index` },
       ]
     }
   ],
@@ -42,36 +46,36 @@ module.exports = {
           {
             text: 'Elasticsearch',
             items: [
-              { link: '/zh/article/elasticsearch/elasticsearch-guifan', text: '基本规范' },
-              { link: '/zh/article/elasticsearch/elasticsearch-guihua', text: '资源规划' }, 
-              { link: '/zh/article/elasticsearch/elasticsearch-config', text: '核心配置' }, 
-              { link: '/zh/article/elasticsearch/elasticsearch-client', text: '客户端' },
+              { link: `${BASEPATH}/zh/article/elasticsearch/elasticsearch-guifan`, text: '基本规范' },
+              { link: `${BASEPATH}/zh/article/elasticsearch/elasticsearch-guihua`, text: '资源规划' }, 
+              { link: `${BASEPATH}/zh/article/elasticsearch/elasticsearch-config`, text: '核心配置' }, 
+              { link: `${BASEPATH}/zh/article/elasticsearch/elasticsearch-client`, text: '客户端' },
             ]
           },
           {
             text: 'Kafka',
             items: [
-              { link: '/zh/article/kafka/kafka-base', text: '基础知识' }, 
+              { link: `${BASEPATH}/zh/article/kafka/kafka-base`, text: '基础知识' }, 
             ]
           },
           {
             text: 'Java',
             items: [
-              { link: '/zh/article/java/jdk-performance', text: 'JDK性能分析' }, 
+              { link: `${BASEPATH}/zh/article/java/jdk-performance`, text: 'JDK性能分析' }, 
             ]
           },
           {
             text: 'Kubernetes',
             items: [
-              { link: '/zh/article/kubernetes/k8s-base', text: '基础概念' }, 
+              { link: `${BASEPATH}/zh/article/kubernetes/k8s-base`, text: '基础概念' }, 
             ]
           },
-          { link: '/zh/note/996-231008-stock', text: '股票预测' },
-          { link: '/zh/note/996-231008-seo', text: '广告联盟' },
-          { link: '/zh/note/996-231009-webservice', text: 'WebService' },
-          { link: '/zh/note/997-231008-vitepress', text: 'VitePress' },
-          { link: '/zh/note/997-231008-vuepress', text: 'VuePress' },
-          { link: '/zh/note/997-231008-idea', text: '发展构思' },
+          { link: `${BASEPATH}/zh/note/996-231008-stock`, text: '股票预测' },
+          { link: `${BASEPATH}/zh/note/996-231008-seo`, text: '广告联盟' },
+          { link: `${BASEPATH}/zh/note/996-231009-webservice`, text: 'WebService' },
+          { link: `${BASEPATH}/zh/note/997-231008-vitepress`, text: 'VitePress' },
+          { link: `${BASEPATH}/zh/note/997-231008-vuepress`, text: 'VuePress' },
+          { link: `${BASEPATH}/zh/note/997-231008-idea`, text: '发展构思' },
         ]
       }
     ],
@@ -82,8 +86,8 @@ module.exports = {
           {
             text: '百科资讯',
             items: [ 
-              { link: '/zh/news/wikipedia/2023/10/wikipedia-20231013.md', text: '20231013' }, 
-              { link: '/zh/news/wikipedia/2023/10/wikipedia-20231012.md', text: '20231012' }, 
+              { link: `${BASEPATH}/zh/news/wikipedia/2023/10/wikipedia-20231013.md`, text: '20231013' }, 
+              { link: `${BASEPATH}/zh/news/wikipedia/2023/10/wikipedia-20231012.md`, text: '20231012' }, 
             ]
           },
         ]
@@ -93,8 +97,8 @@ module.exports = {
       {
         text: '技术文档',
         items: [
-          { text: 'ViteJS', link: '/zh/document/vitejs/guide/' },
-          { text: 'VitePress', link: '/zh/document/vitepress/guide/what-is-vitepress' },
+          { text: 'ViteJS', link: `${BASEPATH}/document/vitejs/guide/` },
+          { text: 'VitePress', link: `${BASEPATH}/document/vitepress/guide/what-is-vitepress` },
         ]
       }
     ]

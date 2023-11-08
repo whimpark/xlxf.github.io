@@ -30,6 +30,7 @@ module.exports = {
     },
    
 
+    // vitepress对自动广告的适应比较差
     head: [
       [
         "script",
