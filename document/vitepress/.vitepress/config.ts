@@ -32,7 +32,16 @@ export default defineConfig({
     ['meta', { name: 'og:locale', content: 'en' }],
     ['meta', { name: 'og:site_name', content: 'VitePress' }],
     ['meta', { name: 'og:image', content: 'https://vitepress.dev/vitepress-og.jpg' }],
-    ['script', { src: 'https://cdn.usefathom.com/script.js', 'data-site': 'AZBRSFGG', 'data-spa': 'auto', defer: '' }]
+    ['script', { src: 'https://cdn.usefathom.com/script.js', 'data-site': 'AZBRSFGG', 'data-spa': 'auto', defer: '' }],
+    [
+      "script",
+      {
+        "client": "ca-pub-6579111049316949",
+        async: true,
+        crossorigin: "anonymous",
+        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-6579111049316949"
+      }
+    ]
   ],
 
   themeConfig: {

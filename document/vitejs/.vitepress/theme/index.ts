@@ -3,19 +3,21 @@ import Theme from 'vitepress/theme'
 import HomeSponsors from './components/HomeSponsors.vue'
 import AsideSponsors from './components/AsideSponsors.vue'
 import SvgImage from './components/SvgImage.vue'
-import WwAds from './components/WwAds.vue'
+import WwAds from './components/WwAds.vue' 
 import './styles/vars.css'
 import './custom.css'
 
+
+
+import MyLayout from '../../../../docs/.vitepress/theme/MyLayout.vue'
+
+
 export default {
-  ...Theme,
-  Layout() {
-    return h(Theme.Layout, null, {
-      'home-features-after': () => h(HomeSponsors),
-      'aside-outline-after': () => h(WwAds),
-      'aside-bottom': () => h(AsideSponsors)
-    })
-  },
+  extends: Theme,
+  // override the Layout with a wrapper component that
+  // injects the slots
+  Layout: MyLayout,
+  
   enhanceApp({ app }) {
     app.component('SvgImage', SvgImage)
   }
