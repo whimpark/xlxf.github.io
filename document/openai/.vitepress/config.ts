@@ -1,8 +1,8 @@
  
 import { defineConfig, type DefaultTheme } from 'vitepress'
 
-// const BASEHOST="https://xlxf.cn"
-const BASEHOST="http://localhost:5173"
+const BASEHOST="https://xlxf.cn"
+// const BASEHOST="http://localhost:5173"
 
 const BASEPATH="/document/openai"
 const BASEURL=`${BASEHOST}${BASEPATH}`
