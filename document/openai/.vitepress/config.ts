@@ -44,13 +44,9 @@ export default defineConfig({
       // '/api-reference/': { base: '/api-reference/', items: sidebarReference() }
     },
 
-    editLink: {
-      pattern: 'https://github.com/vuejs/vitepress/edit/main/docs/:path',
-      text: 'Edit this page on GitHub'
-    },
-
+ 
     socialLinks: [
-      { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+      { icon: 'github', link: 'https://github.com/openai' }
     ],
 
  
@@ -75,11 +71,11 @@ function nav(): DefaultTheme.NavItem[] {
       link: '/document/introduction',
       activeMatch: '/document/'
     },
-    {
-      text: 'API Reference',
-      link: '/reference/site-config',
-      activeMatch: '/reference/'
-    }, 
+    // {
+    //   text: 'API Reference',
+    //   link: '/reference/site-config',
+    //   activeMatch: '/reference/'
+    // }, 
   ]
 }
 
