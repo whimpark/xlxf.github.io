@@ -1,12 +1,13 @@
  
 import { defineConfig, type DefaultTheme } from 'vitepress'
 
+const BASEPATH="https://xlxf.cn"
  
 export default defineConfig({
   lang: 'en-US',
   title: 'OpenAI',
   description: 'OpenAI documents',
-  base:"/document/openai",
+  base: `${BASEPATH}/document/openai`,
   lastUpdated: true,
   cleanUrls: true,
 
