@@ -26,6 +26,7 @@ module.exports = {
     {
       text: '技术文档',
       items: [
+        { text: 'OpenAI', link: `${BASEPATH}/document/openai/document/introduction` },
         { text: 'ViteJS', link: `${BASEPATH}/document/vitejs/guide/` },
         { text: 'VitePress', link: `${BASEPATH}/document/vitepress/guide/what-is-vitepress` },
       ]
@@ -97,6 +98,7 @@ module.exports = {
       {
         text: '技术文档',
         items: [
+          { text: 'OpenAI', link: `${BASEPATH}/document/openai/document/introduction` },
           { text: 'ViteJS', link: `${BASEPATH}/document/vitejs/guide/` },
           { text: 'VitePress', link: `${BASEPATH}/document/vitepress/guide/what-is-vitepress` },
         ]

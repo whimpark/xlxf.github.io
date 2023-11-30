@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build:document:openai": "sh ./bin/build-document.sh openai ", 
     "build:document:vitejs": "sh ./bin/build-document.sh vitejs ", 
     "build:document:vitepress": "sh ./bin/build-document.sh vitepress ", 
     "dev": "vitepress dev docs ", 
