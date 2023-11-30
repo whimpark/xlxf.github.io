@@ -1,13 +1,17 @@
  
 import { defineConfig, type DefaultTheme } from 'vitepress'
 
-const BASEPATH="https://xlxf.cn"
+// const BASEHOST="https://xlxf.cn"
+const BASEHOST="http://localhost:5173"
+
+const BASEPATH="/document/openai"
+const BASEURL=`${BASEHOST}${BASEPATH}`
  
 export default defineConfig({
   lang: 'en-US',
   title: 'OpenAI',
   description: 'OpenAI documents',
-  base: `${BASEPATH}/document/openai`,
+  base: BASEPATH,
   lastUpdated: true,
   cleanUrls: true,
 
@@ -41,7 +45,7 @@ export default defineConfig({
     nav: nav(),
 
     sidebar: {
-      '/document/': { base: '/document/', items: document() },
+      '/document/': { base: `${BASEURL}/document/`, items: document() },
       // '/api-reference/': { base: '/api-reference/', items: sidebarReference() }
     },
 
