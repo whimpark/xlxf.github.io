@@ -6,7 +6,7 @@ const configZh=require("./configs/config-zh.js")
 module.exports = {
   lang: "zh",
   base:"/",
-  lastUpdated: false,
+  lastUpdated: true,
   appearance: "light", 
   ignoreDeadLinks: true,
   locales: {
