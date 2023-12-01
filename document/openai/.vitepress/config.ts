@@ -20,6 +20,9 @@ export default defineConfig({
   },
 
  
+  sitemap: {
+    hostname: `${BASEURL}/`
+  },
 
   /* prettier-ignore */
   head: [
