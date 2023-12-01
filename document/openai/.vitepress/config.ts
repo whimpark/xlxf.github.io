@@ -13,7 +13,7 @@ export default defineConfig({
   description: 'OpenAI documents',
   base: BASEPATH,
   lastUpdated: true,
-  cleanUrls: true,
+  cleanUrls: false,
 
   markdown: {
     math: true

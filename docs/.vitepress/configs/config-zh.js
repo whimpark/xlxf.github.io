@@ -87,8 +87,8 @@ module.exports = {
           {
             text: '百科资讯',
             items: [ 
-              { link: `${BASEPATH}/zh/news/wikipedia/2023/10/wikipedia-20231013.md`, text: '20231013' }, 
-              { link: `${BASEPATH}/zh/news/wikipedia/2023/10/wikipedia-20231012.md`, text: '20231012' }, 
+              { link: `${BASEPATH}/zh/news/wikipedia/2023/10/wikipedia-20231013`, text: '20231013' }, 
+              { link: `${BASEPATH}/zh/news/wikipedia/2023/10/wikipedia-20231012`, text: '20231012' }, 
             ]
           },
         ]
@@ -106,7 +106,7 @@ module.exports = {
     ]
   },
   footer: {
-    message: '<a href="/zh/site/about.html">关于我们</a> | <a href="/zh/site/contact.html">联系我们</a> | <a href="/zh/site/disclaimer.html">免责声明</a> | <a href="/zh/site/privacy.html">隐私条款</a>',
+    message: '<a href="/zh/site/about.html">关于我们</a> | <a href="/zh/site/contact.html">联系我们</a> | <a href="/zh/site/disclaimer.html">免责声明</a> | <a href="/zh/site/privacy.html">隐私条款</a> | <a href="/sitemap.xml">网站地图</a>',
     copyright: 'Copyright © 2018-present xlxf.cn ICP备案 '
   },
   docFooter: { prev: "上一篇", next: "下一篇" }
