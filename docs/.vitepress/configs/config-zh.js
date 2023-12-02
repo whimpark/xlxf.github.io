@@ -35,6 +35,7 @@ module.exports = {
       text: '热点资讯',
       items: [
         { text: '百科资讯', link: `${BASEPATH}/zh/news/wikipedia/index` },
+        { text: '谷歌资讯', link: `${BASEPATH}/zh/news/google/index` },
       ]
     }
   ],
@@ -89,6 +90,12 @@ module.exports = {
             items: [ 
               { link: `${BASEPATH}/zh/news/wikipedia/2023/10/wikipedia-20231013`, text: '20231013' }, 
               { link: `${BASEPATH}/zh/news/wikipedia/2023/10/wikipedia-20231012`, text: '20231012' }, 
+            ]
+          },
+          {
+            text: '谷歌资讯',
+            items: [ 
+              { link: `${BASEPATH}/zh/news/google/2023/12/google-20231202`, text: '20231202' },  
             ]
           },
         ]
