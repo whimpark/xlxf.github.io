@@ -86,9 +86,7 @@ async function writeArticles(articles, year, month, day){
    
     let fileContent=""
     fileContent+=`---
-layout: doc
-## navbar: false
-sidebar: false
+layout: doc 
 footer: true
 prev: false
 next: false 
