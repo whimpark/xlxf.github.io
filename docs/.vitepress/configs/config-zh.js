@@ -96,6 +96,7 @@ module.exports = {
             text: '谷歌资讯',
             items: [ 
               { link: `${BASEPATH}/zh/news/google/2023/12/google-20231202`, text: '20231202' },  
+              { link: `${BASEPATH}/zh/news/google/2023/12/google-20231203`, text: '20231203' },  
             ]
           },
         ]
