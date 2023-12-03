@@ -17,8 +17,11 @@ for(let ki=0;ki<links.length;ki++){
         "link":plink.href,
     })
 }
-
-console.log(JSON.stringify(contents)) 
+let contentString=JSON.stringify(contents)
+contentString=contentString.replace(/“/g, "'")
+contentString=contentString.replace(/”/g, "'")
+contentString=contentString.replace(/\\\"/g, "'")
+console.log(contentString) 
 
 ```
 
