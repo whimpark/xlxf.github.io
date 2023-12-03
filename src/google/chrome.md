@@ -18,7 +18,7 @@ for(let ki=0;ki<links.length;ki++){
     })
 }
 
-console.log(contents) 
+console.log(JSON.stringify(contents)) 
 
 ```
 
