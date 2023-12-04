@@ -1,3 +1,16 @@
+---
+hideAdContent: true
+title: Speech to text, 语音转文字
+lang: zh-CN
+head:
+  - - meta
+    - name: description
+      content: 基于我们最先进的开源大型 v2 Whisper 模型，提供两种语音到文本端点、转录和翻译
+  - - meta
+    - name: keywords
+      content: 音频转换为文本, 语音转文字, Speech to text, turn audio into text
+---
+
 # Speech to text
 Learn how to turn audio into text
 

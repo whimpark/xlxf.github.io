@@ -1,8 +1,8 @@
-Chat Plugins Beta
+# Chat Plugins Beta
 Learn how to build a plugin that allows ChatGPT to intelligently call your API.
 
 Looking for ChatGPT? Head to chat.openai.com.
-GPTs and custom Actions are here!
+## GPTs and custom Actions are here!
 
 We’re rolling out custom versions of ChatGPT that you can create for a specific purpose—called GPTs. GPTs are a new way for anyone to create a tailored version of ChatGPT to be more helpful in their daily life, at specific tasks, at work, or at home—and then share that creation with others. We are excited to announce Actions, which build on plugins. Actions take many of the core ideas of plugins while also introducing many new features builders have been asking for.
 Introduction
@@ -19,7 +19,7 @@ The AI model acts as an intelligent API caller. Given an API spec and a natural-
 
 Over time, we anticipate the system will evolve to accommodate more advanced use cases.
 
-Plugin flow
+## Plugin flow
 To build a plugin, it is important to understand the end-to-end flow.
 
 Create a manifest file and host it at yourdomain.com/.well-known/ai-plugin.json
@@ -45,12 +45,12 @@ The model might include links returned from the API calls in its response. These
 The model can also format data from your API in markdown and the ChatGPT UI will render the markdown automatically.
 Currently, we will be sending the user’s country and state in the Plugin conversation header (if you are in California for example, it would look like {"openai-subdivision-1-iso-code": "US-CA"}. This is useful for shopping, restaurants, weather, and more. You can read more in our developer terms of use.
 
-Next steps
+## Next steps
 Now that you know the basics of plugins, you might want to:
 
-Get started building a plugin
-Explore example plugins
-Find the right plugin authentication schema
-Read about important steps for productionizing your plugin
-Learn about the plugin review process
-Familiarize yourself with the plugin policies
+- Get started building a plugin
+- Explore example plugins
+- Find the right plugin authentication schema
+- Read about important steps for productionizing your plugin
+- Learn about the plugin review process
+- Familiarize yourself with the plugin policies
