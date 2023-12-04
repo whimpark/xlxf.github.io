@@ -44,6 +44,23 @@ export default defineConfig({
         })(window, document, "clarity", "script", "k0ogsddggc");
       `
     ],
+    // <!-- Google tag (gtag.js) -->
+    [
+      "script",
+      { 
+        async: "true", 
+        src: "https://www.googletagmanager.com/gtag/js?id=G-BX7E3SHYKW"
+      }
+    ],
+    [
+      'script', {},
+      `
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-BX7E3SHYKW');
+      `
+    ],
 
     [
       "script",
