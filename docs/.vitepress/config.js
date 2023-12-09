@@ -71,22 +71,22 @@ module.exports = {
       }
     ]
     ,
-    // Adsense 广告拦截收入挽回
-    [
-      "script",
-      { 
-        nonce: "8_Y3EEAzCOpbhbeJJhVnDQ",
-        async: true,
-        crossorigin: "anonymous",
-        src: "https://fundingchoicesmessages.google.com/i/pub-6579111049316949?ers=1"
-      }
-    ],
-    [
-      'script', {nonce: "8_Y3EEAzCOpbhbeJJhVnDQ"},
-      `
-      (function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();
-      `
-    ],
+    // Adsense 广告拦截收入挽回，无法访问google.com
+    // [
+    //   "script",
+    //   { 
+    //     nonce: "8_Y3EEAzCOpbhbeJJhVnDQ",
+    //     async: true,
+    //     crossorigin: "anonymous",
+    //     src: "https://fundingchoicesmessages.google.com/i/pub-6579111049316949?ers=1"
+    //   }
+    // ],
+    // [
+    //   'script', {nonce: "8_Y3EEAzCOpbhbeJJhVnDQ"},
+    //   `
+    //   (function() {function signalGooglefcPresent() {if (!window.frames['googlefcPresent']) {if (document.body) {const iframe = document.createElement('iframe'); iframe.style = 'width: 0; height: 0; border: none; z-index: -1000; left: -1000px; top: -1000px;'; iframe.style.display = 'none'; iframe.name = 'googlefcPresent'; document.body.appendChild(iframe);} else {setTimeout(signalGooglefcPresent, 0);}}}signalGooglefcPresent();})();
+    //   `
+    // ],
  
   ],
 
