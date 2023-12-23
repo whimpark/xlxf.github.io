@@ -109,7 +109,7 @@ fileContent+=`Latest News  (${year}${month}${day})   \n`;
 
         fileContent+=`## ${article.title}   \n`;
         fileContent+=`${article.titleEn}   \n`; 
-        fileContent+=`${article.link}   \n`; 
+        fileContent+=`${article.origin?article.origin:article.link}   \n`; 
         fileContent+=`\n`;  
     }
 
@@ -122,15 +122,17 @@ async function main(){
  
     // 最新资讯  
     let newsDate=new Date() 
-    let news={year:fmt.fyear(newsDate), month: fmt.fmonth(newsDate), day:fmt.fday(newsDate)}
-    let content=FileHelper.read(`${SRCBASE}/news/news-${news.year}${news.month}${news.day}.json`)
+    // let news={year:fmt.fyear(newsDate), month: fmt.fmonth(newsDate), day:fmt.fday(newsDate)}
+    let news={year:"2023", month: "12", day: "06"}
+    // let content=FileHelper.read(`${SRCBASE}/news/news-${news.year}${news.month}${news.day}.json`)
+    let content=FileHelper.read(`${SRCBASE}/news/news-${news.year}${news.month}${news.day}-origin.json`)
     let contentEn=FileHelper.read(`${SRCBASE}/news/news-${news.year}${news.month}${news.day}-en.json`)
     let articles=JSON.parse(content)
     let articlesEn=JSON.parse(contentEn)
     for (let ci = 0; ci < articlesEn.length; ci++) {
         const articleEn = articlesEn[ci];
         const article = articles[ci];
-        article.titleEn=articleEn.title
+        article.titleEn=articleEn.title 
     }
 
     console.log(articles);
