@@ -18,7 +18,7 @@
                 <qrcode-vue :value="value" :size="size" level="H" />
             </div>
             <div class="qrcode-footer">
-                @AIGC
+                @最新资讯
             </div>
         </div>
         <div class="qrcode-image-layout">
@@ -113,7 +113,7 @@ export default {
         justify-content: right;
         align-items: end;
         color: #999;
-        padding: 5px;
+        padding: 10px;
     }
 }
 </style>
