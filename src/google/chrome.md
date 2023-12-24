@@ -41,6 +41,25 @@ function printNews02(){
     console.log(contentString) 
 }
 
+function printNews03(){
+    let links=document.getElementsByTagName("a")
+    let contents=[]
+    for(let ki=0;ki<links.length;ki++){
+        let link=links[ki] 
+
+        if(!link.innerText || link.innerText.length<10) continue;
+        contents.push({
+            "title":link.innerText,
+            "link":link.href,
+        })
+    }
+    let contentString=JSON.stringify(contents)
+    contentString=contentString.replace(/“/g, "'")
+    contentString=contentString.replace(/”/g, "'")
+    contentString=contentString.replace(/\\\"/g, "'")
+    console.log(contentString) 
+}
+
 function fetchJson(url){
     return fetch(url).then(stream=>{
         return stream.html().then(res=>{

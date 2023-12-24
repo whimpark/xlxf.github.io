@@ -4,8 +4,7 @@ const AxiosRequest =require("../http/AxiosRequest.js")
 const FileHelper =require("../helper/FileHelper.js") 
 const fmt =require("../helper/FormatHelper.js") 
 const wiki = require('wikipedia');
-
-
+ 
 
 const translate = require("google-translate-api");
 
@@ -28,12 +27,32 @@ function getFileName(channel, lang, year, month, day){
 function getFileFolder(base, channel, lang, year, month, day){
     return `${base}/${channel}/${year}/${month}`
 }
-async function transformArticle(article){
+async function translateByGoogle2(article){
     article.titleZh= article.title
     let res=await translate(article.titleZh, { to: 'en' })
     article.titleEn= res?res.text:article.titleZh
     return article
 }
+async function translateByGoogle(article){
+    let config={
+        headers:{
+            "Host":"translate.google.com"
+        }
+    }
+    let q=encodeURIComponent(article.title)
+    let url=`https://142.251.43.14/translate_a/single?client=at&sl=zh-CN&tl=en&dt=t&q=${q}`
+    let res=await fetch(url, config).then(async stream=>{
+        return await stream.json().then(res=>{ 
+            return res
+        })
+    })
+    article.titleEn= (res&&res[0]&&res[0][0]&&res[0][0][0])?res[0][0][0]:article.title 
+    return article
+}
+
+
+
+
 
 async function translateArticle(article){
     article.titleZh= article.title
@@ -85,67 +104,71 @@ function writeArticlesFile(base, lang, content, year, month, day){
 async function writeArticles(articles, year, month, day){
    
     let fileContent=""
-    fileContent+=`---
-layout: doc 
-footer: true
-prev: false
-next: false 
-hideAdContent: false
-title: 最新资讯
----
-`
-    
-fileContent+=`# 最新资讯  \n`; 
-fileContent+=`Latest News  (${year}${month}${day})   \n`; 
+    fileContent+=`---` 
+    fileContent+=`layout: doc `
+    fileContent+=`footer: true`
+    fileContent+=`prev: false`
+    fileContent+=`next: false `
+    fileContent+=`hideAdContent: false`
+    fileContent+=`title: 最新资讯`
+    fileContent+=`---`
+    fileContent+=`# 最新资讯  \n`; 
+    fileContent+=`Latest News  (${year}${month}${day})   \n`; 
  
     let article=null 
     for (let index = 0; index < articles.length; index++) { 
         article=articles[index] 
         
-        console.log("translate title: ", article.title);
+        console.log("translating title: ", article.title); 
         if(!article.titleEn){
-            await transformArticle(article)
+            await translateByGoogle(article)
         }
 
         fileContent+=`## ${article.title}   \n`;
         fileContent+=`${article.titleEn}   \n`; 
         fileContent+=`${article.origin?article.origin:article.link}   \n`; 
-        fileContent+=`\n`;  
+        fileContent+=`\n`;   
     }
 
     writeArticlesFile(PATH, "zh", fileContent, year, month, day) 
+ 
 }
 
 
  
 async function main(){
+    let autoTranslate=true
  
     // 最新资讯  
-    let newsDate=new Date() 
-    // let news={year:fmt.fyear(newsDate), month: fmt.fmonth(newsDate), day:fmt.fday(newsDate)}
-    let news={year:"2023", month: "12", day: "06"}
-    // let content=FileHelper.read(`${SRCBASE}/news/news-${news.year}${news.month}${news.day}.json`)
-    let content=FileHelper.read(`${SRCBASE}/news/news-${news.year}${news.month}${news.day}-origin.json`)
-    let contentEn=FileHelper.read(`${SRCBASE}/news/news-${news.year}${news.month}${news.day}-en.json`)
+    let now=new Date() 
+    let newsDate={year:fmt.fyear(now), month: fmt.fmonth(now), day:fmt.fday(now)}
+    // let newsDate={year:"2023", month: "12", day: "06"}
+    // let content=FileHelper.read(`${SRCBASE}/news/news-${newsDate.year}${newsDate.month}${newsDate.day}.json`)
+    let content=FileHelper.read(`${SRCBASE}/news/news-${newsDate.year}${newsDate.month}${newsDate.day}-origin.json`)
     let articles=JSON.parse(content)
-    let articlesEn=JSON.parse(contentEn)
-    for (let ci = 0; ci < articlesEn.length; ci++) {
-        const articleEn = articlesEn[ci];
-        const article = articles[ci];
-        article.titleEn=articleEn.title 
+
+    if(!autoTranslate){
+        let contentEn=FileHelper.read(`${SRCBASE}/news/news-${newsDate.year}${newsDate.month}${newsDate.day}-en.json`)
+        let articlesEn=JSON.parse(contentEn)
+        for (let ci = 0; ci < articlesEn.length; ci++) {
+            const articleEn = articlesEn[ci];
+            const article = articles[ci];
+            article.titleEn=articleEn.title 
+        }
     }
 
-    console.log(articles);
-    writeArticles(articles, news.year, news.month, news.day )
+    writeArticles(articles, newsDate.year, newsDate.month, newsDate.day ) 
+    console.log("Write news file finished! ");
+}
+
+async function test() {
+    let article={title:"前11月内蒙古全区制造业投资同比增长52% 居全国第一"}
+    // let article={title:"前11月内蒙古全区制造业投资同比增长52% 居全国第一"}
+    article=await translateByGoogle(article)
+    console.log(article);
 
 }
 
-
 main()
-     
-
-
-
-
-
+// test()
 

@@ -4,8 +4,8 @@
 const axios = require("axios")
 
 module.exports = {
-    get(url) {
-        return axios.get(url).then((res) => {
+    get(url, config) {
+        return axios.get(url, config).then((res) => {
             return res.data
         }).catch(ex => {
             console.error(ex)
