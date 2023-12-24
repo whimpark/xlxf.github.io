@@ -1,6 +1,10 @@
 <template>
     <div>
-        <div class="qrcode-layout" ref="bill">
+        <div class="qrcode-button">
+            <br>
+            <button @click="htmlToCanvas()">生成图片</button>
+        </div>
+        <div class="qrcode-layout" ref="bill" v-if="showQRCode">
             <div class="qrcode-header">
 
             </div>
@@ -16,9 +20,6 @@
             <div class="qrcode-footer">
                 @AIGC
             </div>
-        </div>
-        <div class="qrcode-button">
-            <button @click="htmlToCanvas()">生成图片</button>
         </div>
         <div class="qrcode-image-layout">
             <img :src="canvasImageUrl" />
@@ -38,6 +39,7 @@ export default {
             size: 200,
             today: nowString,
             canvasImageUrl:"",
+            showQRCode: false,
         }
     },
     components: {
@@ -45,10 +47,14 @@ export default {
     },
     methods: {
         htmlToCanvas() {
-            html2canvas(this.$refs.bill, {}).then((canvas) => {
-                let imageUrl = canvas.toDataURL('image/png'); // 将canvas转成base64图片格式
-                this.canvasImageUrl = imageUrl; 
-            });
+            this.showQRCode=true
+            this.$nextTick(()=>{
+                html2canvas(this.$refs.bill, {}).then((canvas) => {
+                    let imageUrl = canvas.toDataURL('image/png'); // 将canvas转成base64图片格式
+                    this.canvasImageUrl = imageUrl; 
+                    this.showQRCode=false
+                });
+            })
         }
 
     }
