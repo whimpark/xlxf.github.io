@@ -9,7 +9,7 @@
 
             </div>
             <div class="qrcode-title">
-                最新新闻资讯<br>
+                新闻资讯<br>
             </div>
             <div class="qrcode-date">
                 {{ today }}
