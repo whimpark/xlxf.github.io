@@ -10,6 +10,7 @@ const translate = require("google-translate-api");
 
 const config=require("./config.js");
 const { log } = require('console');
+const { resolve } = require('path');
  
 const PATH="./docs/{lang}/news"
 const SRCBASE="./src/google"
@@ -105,6 +106,17 @@ function writeArticlesFile(base, lang, content, year, month, day){
 
 
 
+async function translateArticles(articles){
+    let article=null  
+    for (let index = 0; index < articles.length; index++) { 
+        article=articles[index] 
+        console.log("translating title: ", article.title); 
+        await translateByGoogle(article)
+        await delay(100)
+    }
+    return article
+}
+
 async function writeArticles(articles, year, month, day){
    
     let fileContent=""
@@ -115,7 +127,7 @@ async function writeArticles(articles, year, month, day){
     fileContent+=`next: false\n`
     fileContent+=`navbar: false\n`
     fileContent+=`hideAdContent: false\n`
-    fileContent+=`title: 中国最新资讯\n`
+    fileContent+=`title: 最新资讯\n`
     fileContent+=`head:\n`; 
     fileContent+=`- - meta\n`; 
     fileContent+=`  - name: description\n`; 
@@ -128,19 +140,19 @@ async function writeArticles(articles, year, month, day){
     fileContent+=`Latest News  (${year}${month}${day})   \n`; 
  
     let article=null 
+    let articleCount=0
     for (let index = 0; index < articles.length; index++) { 
         article=articles[index] 
-        
-        console.log("translating title: ", article.title); 
-        if(!article.titleEn){
-            await delay(100)
-            await translateByGoogle(article)
-        }
 
         fileContent+=`## ${article.title}   \n`;
         fileContent+=`${article.titleEn}   \n`; 
         fileContent+=`${article.origin?article.origin:article.link}   \n`; 
         fileContent+=`\n`;   
+        if(articleCount++>10){
+            fileContent+=`<GoogleAdsense />\n`;  
+            fileContent+=`\n`;  
+            articleCount=0  
+        }
     }
 
     writeArticlesFile(PATH, "zh", fileContent, year, month, day) 
@@ -152,14 +164,36 @@ async function writeArticles(articles, year, month, day){
 async function main(){
     let autoTranslate=true
  
-    // 最新资讯  
+    // 日期
     let now=new Date() 
     let newsDate={year:fmt.fyear(now), month: fmt.fmonth(now), day:fmt.fday(now)}
     // let newsDate={year:"2023", month: "12", day: "06"}
-    // let content=FileHelper.read(`${SRCBASE}/news/news-${newsDate.year}${newsDate.month}${newsDate.day}.json`)
-    let content=FileHelper.read(`${SRCBASE}/news/news-${newsDate.year}${newsDate.month}${newsDate.day}-origin.json`)
+    let dateString=`${newsDate.year}${newsDate.month}${newsDate.day}`
+    // 文件
+    let originFilePath=`${SRCBASE}/news/news-${dateString}-origin.json`
+    let translateFilePath=`${SRCBASE}/news/news-${dateString}-translate.json`
+    // 加载源文件
+    let content=FileHelper.read(originFilePath)
     let articles=JSON.parse(content)
 
+    // 翻译
+    let isExist=await new Promise((resolve)=>{
+        fs.access(translateFilePath, fs.constants.F_OK, (err) => { 
+            resolve(err?false:true) 
+        });
+    })
+    console.log("isExist",isExist);
+    if(isExist){
+        // 加载翻译
+        content=FileHelper.read(translateFilePath)
+        articles=JSON.parse(content)
+    }else{
+        // 翻译
+        await translateArticles(articles)
+        FileHelper.write(translateFilePath, JSON.stringify(articles, null, 2))
+    }
+
+    // 手动翻译
     if(!autoTranslate){
         let contentEn=FileHelper.read(`${SRCBASE}/news/news-${newsDate.year}${newsDate.month}${newsDate.day}-en.json`)
         let articlesEn=JSON.parse(contentEn)
