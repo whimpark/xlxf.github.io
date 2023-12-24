@@ -35,7 +35,7 @@ export default {
         let now = new Date();
         let nowString = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日`
         return {
-            value: location.href,
+            value: "https://xlxf.cn",
             size: 200,
             today: nowString,
             canvasImageUrl:"",
@@ -44,6 +44,9 @@ export default {
     },
     components: {
         QrcodeVue
+    },
+    mounted(){
+        this.value=window.location.href;
     },
     methods: {
         htmlToCanvas() {
