@@ -1,9 +1,10 @@
 // .vitepress/theme/index.js
 import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
-import AdComponent from './AdComponent.vue'
-
-import MyLayout from '../../../../docs/.vitepress/theme/MyLayout.vue'
+// import AdComponent from './AdComponent.vue'
+ 
+import ThemeLayout from '../../../../src/components/ThemeLayout.vue'
+import GoogleAdsense from '../../../../src/components/GoogleAdsense.vue'
 
 
 export default {
@@ -17,6 +18,11 @@ export default {
   extends: DefaultTheme,
   // override the Layout with a wrapper component that
   // injects the slots
-  Layout: MyLayout
-
+  Layout: ThemeLayout,
+  enhanceApp({ app }) {
+    // app.component('qrcode', qrcode)
+    app.component('GoogleAdsense', GoogleAdsense)
+  }
 }
+
+

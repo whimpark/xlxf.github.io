@@ -7,18 +7,17 @@ import WwAds from './components/WwAds.vue'
 import './styles/vars.css'
 import './custom.css'
 
-
-
-import MyLayout from '../../../../docs/.vitepress/theme/MyLayout.vue'
-
+import ThemeLayout from '../../../../src/components/ThemeLayout.vue'
+import GoogleAdsense from '../../../../src/components/GoogleAdsense.vue'
 
 export default {
   extends: Theme,
   // override the Layout with a wrapper component that
   // injects the slots
-  Layout: MyLayout,
+  Layout: ThemeLayout,
   
   enhanceApp({ app }) {
     app.component('SvgImage', SvgImage)
+    app.component('GoogleAdsense', GoogleAdsense)
   }
 }
