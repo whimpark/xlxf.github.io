@@ -113,6 +113,7 @@ async function writeArticles(articles, year, month, day){
     fileContent+=`footer: true\n`
     fileContent+=`prev: false\n`
     fileContent+=`next: false\n`
+    fileContent+=`navbar: false\n`
     fileContent+=`hideAdContent: false\n`
     fileContent+=`title: 中国最新资讯\n`
     fileContent+=`head:\n`; 

@@ -35,7 +35,7 @@ export default {
         let now = new Date();
         let nowString = `${now.getFullYear()}年${now.getMonth() + 1}月${now.getDate()}日`
         return {
-            value: "https://xlxf.cn",
+            value: "https://www.baidu.com",
             size: 200,
             today: nowString,
             canvasImageUrl:"",
