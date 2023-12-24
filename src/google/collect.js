@@ -20,6 +20,8 @@ const CHANNEL="google"
 
 const argv = require('minimist')(process.argv.slice(2));
 
+function delay(time) { return new Promise(resolve => setTimeout(resolve, time)); }
+
 
 function getFileName(channel, lang, year, month, day){
     return `${channel}-${year}${month}${day}.md`
@@ -101,17 +103,26 @@ function writeArticlesFile(base, lang, content, year, month, day){
     FileHelper.write(path, content, "utf8", false)  
 }
 
+
+
 async function writeArticles(articles, year, month, day){
    
     let fileContent=""
-    fileContent+=`---` 
-    fileContent+=`layout: doc `
-    fileContent+=`footer: true`
-    fileContent+=`prev: false`
-    fileContent+=`next: false `
-    fileContent+=`hideAdContent: false`
-    fileContent+=`title: 最新资讯`
-    fileContent+=`---`
+    fileContent+=`---\n` 
+    fileContent+=`layout: doc\n`
+    fileContent+=`footer: true\n`
+    fileContent+=`prev: false\n`
+    fileContent+=`next: false\n`
+    fileContent+=`hideAdContent: false\n`
+    fileContent+=`title: 中国最新资讯\n`
+    fileContent+=`head:\n`; 
+    fileContent+=`- - meta\n`; 
+    fileContent+=`  - name: description\n`; 
+    fileContent+=`    content: 中国最新资讯\n`; 
+    fileContent+=`- - meta\n`; 
+    fileContent+=`  - name: keywords\n`; 
+    fileContent+=`    content: 中国最新资讯, 中国资讯, 双语资讯\n`; 
+    fileContent+=`---\n`
     fileContent+=`# 最新资讯  \n`; 
     fileContent+=`Latest News  (${year}${month}${day})   \n`; 
  
@@ -121,6 +132,7 @@ async function writeArticles(articles, year, month, day){
         
         console.log("translating title: ", article.title); 
         if(!article.titleEn){
+            await delay(100)
             await translateByGoogle(article)
         }
 
