@@ -1,0 +1,62 @@
+
+function getRandUrl(){
+    urls=[
+        "https://xlxf.cn/zh/article/kafka/kafka-base",
+        "https://xlxf.cn/zh/article/elasticsearch/elasticsearch-guifan",
+        "https://xlxf.cn/zh/article/elasticsearch/elasticsearch-guihua",
+        "https://xlxf.cn/zh/article/elasticsearch/elasticsearch-config",
+        "https://xlxf.cn/zh/article/elasticsearch/elasticsearch-client",
+        "https://xlxf.cn/zh/article/java/jdk-performance",
+        "https://xlxf.cn/zh/note/996-231008-stock",
+        "https://xlxf.cn/zh/article/kubernetes/k8s-base",
+        "https://xlxf.cn/zh/article/elasticsearch/elasticsearch-client",
+        "https://xlxf.cn/zh/news/wikipedia/2023/10/wikipedia-20231000.html",
+        "https://xlxf.cn/document/vitejs/guide/ssr.html",
+        "https://xlxf.cn/document/vitejs/guide/troubleshooting.html",
+        "https://xlxf.cn/document/vitejs/guide/dep-pre-bundling.html",
+        "https://xlxf.cn/document/vitepress/guide/mpa-mode",
+        "https://xlxf.cn/document/openai/document/actions",
+        "https://xlxf.cn/document/openai/document/changelog",
+        "https://xlxf.cn/document/openai/document/deprecations",
+        "https://xlxf.cn/document/openai/document/embeddings",
+        "https://xlxf.cn/document/openai/document/error-codes",
+        "https://xlxf.cn/document/openai/document/fine-tuning",
+        "https://xlxf.cn/document/openai/document/function-calling",
+        "https://xlxf.cn/document/openai/document/how-assistants-work",
+        "https://xlxf.cn/document/openai/document/image-generation",
+        "https://xlxf.cn/document/openai/document/introduction",
+        "https://xlxf.cn/document/openai/document/libraries",
+        "https://xlxf.cn/document/openai/document/models",
+        "https://xlxf.cn/document/openai/document/moderation",
+        "https://xlxf.cn/document/openai/document/overview",
+        "https://xlxf.cn/document/openai/document/plugins",
+        "https://xlxf.cn/document/openai/document/policies",
+        "https://xlxf.cn/document/openai/document/production-best-practices",
+        "https://xlxf.cn/document/openai/document/prompt-engineering",
+        "https://xlxf.cn/document/openai/document/quickstart",
+        "https://xlxf.cn/document/openai/document/rate-limits",
+        "https://xlxf.cn/document/openai/document/safety-best-practices",
+        "https://xlxf.cn/document/openai/document/speech-to-text",
+        "https://xlxf.cn/document/openai/document/text-generation",
+        "https://xlxf.cn/document/openai/document/text-to-speech",
+        "https://xlxf.cn/document/openai/document/tools",
+        "https://xlxf.cn/document/openai/document/tutorials",
+        "https://xlxf.cn/document/openai/document/vision",
+        "https://xlxf.cn/document/openai/",
+        "https://xlxf.cn/document/openai/reference/readme",
+    ]
+    let ui=parseInt(Math.random()*(urls.length-1))
+    return (urls[ui])
+}
+
+
+function randomClick(){
+    let link=document.getElementsByTagName("a")[0]
+    link.href=getRandUrl()
+    link.target="_blank"
+    link.click()
+    setTimeout(randomClick, Math.random()*180000+180000)
+}
+
+setTimeout(randomClick, Math.random()*1500+1500)
+
