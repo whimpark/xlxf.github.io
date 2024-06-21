@@ -15,12 +15,12 @@
             ctx.drawImage(imgElement, 0, 0, canvas.width, canvas.height);
         
             // 将Canvas转换成Base64
-            var base64String = canvas.toDataURL('image/png');
+            var base64String = canvas.toDataURL('image/jpeg');
         
             // 调用回调函数并传递Base64字符串
             callback.call(this, base64String);
         }
-
+ 
 
 
         function resetImage(){
@@ -33,7 +33,7 @@
             html2canvas(image).then(canvas => { 
                 console.log("asdfasdf");
                 var target = document.getElementById("target")
-                target.src = canvas.toDataURL('image/png'); 
+                target.src = canvas.toDataURL('image/jpeg'); 
                 image.style.display="none"
 
                 resizeImage()
@@ -53,7 +53,7 @@
             html2canvas(image).then(canvas => { 
                 console.log("asdfasdf");
                 var target = document.getElementById("target")
-                target.src = canvas.toDataURL('image/png'); 
+                target.src = canvas.toDataURL('image/jpeg'); 
                 image.style.display="none"
             });
         }
@@ -98,7 +98,7 @@
                 ctx.drawImage(img, left, top, newWidth, newHeight);
         
                 // 执行回调函数并传递裁剪后的图片数据URL
-                target.src=(canvas.toDataURL('image/png'));
+                target.src=(canvas.toDataURL('image/jpeg'));
                 
                 image.style.display="none"
             };
