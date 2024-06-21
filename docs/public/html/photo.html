@@ -98,11 +98,6 @@
                 reader.readAsDataURL(file);
             });
         }
-
-
-
-
-
     </script>
     <style>
  
@@ -110,6 +105,7 @@
 </head>
 
 <body onload="init()"> 
+    请上传【透明背景】的底图, 图片尺寸尽量大于【898,1181】, 至少大于目标证件尺寸<br>
     上传文件：<input type="file" id="file-input" /><br>
     证件类型：<select id="size" onchange="changeSize();resetImage()">
         <option value="[260,378]" selected>小一寸</option>
