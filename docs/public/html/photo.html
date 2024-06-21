@@ -1,0 +1,173 @@
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.3.2/html2canvas.min.js"></script>
+    <script>
+
+        function convertImageToBase64(imgElement, callback) {
+            // 创建一个Canvas元素
+            var canvas = document.createElement('canvas');
+            canvas.width = imgElement.width;
+            canvas.height = imgElement.height;
+        
+            // 绘制图片到Canvas
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(imgElement, 0, 0, canvas.width, canvas.height);
+        
+            // 将Canvas转换成Base64
+            var base64String = canvas.toDataURL('image/png');
+        
+            // 调用回调函数并传递Base64字符串
+            callback.call(this, base64String);
+        }
+
+
+
+        function resetImage(){
+
+            var color = document.getElementById('color');
+            var image=document.getElementById("image")
+            image.style.backgroundColor=color.value
+            image.style.display=""
+
+            html2canvas(image).then(canvas => { 
+                console.log("asdfasdf");
+                var target = document.getElementById("target")
+                target.src = canvas.toDataURL('image/png'); 
+                image.style.display="none"
+
+                resizeImage()
+            });
+        }
+
+
+        function changeImage(){
+            var color = document.getElementById('color');
+            var image=document.getElementById("image")
+            image.style.backgroundColor=color.value
+            image.style.display=""
+            // 使用方法：
+            // 假设你有一个<img>元素，其ID为"image"
+
+
+            html2canvas(image).then(canvas => { 
+                console.log("asdfasdf");
+                var target = document.getElementById("target")
+                target.src = canvas.toDataURL('image/png'); 
+                image.style.display="none"
+            });
+        }
+
+        function resizeImage() {
+            var image=document.getElementById("image")
+
+            var target = document.getElementById("target")
+            var w =document.getElementById("width").value;
+            var h =document.getElementById("height").value;
+            var left =document.getElementById("left").value;
+            var top =document.getElementById("top").value;
+ 
+            const img = new Image();
+            img.src = target.src ;
+            img.onload = function() {
+                const canvas = document.createElement('canvas');
+                const ctx = canvas.getContext('2d');
+
+
+                // 计算新的宽度和高度
+                var newWidth =w;
+                var newHeight =h;
+                var ratio=1;
+
+                const wratio=w/img.width
+                const hratio=h/img.height
+        
+                if(wratio>hratio){
+                    newHeight=img.height*wratio
+                    ratio=wratio
+                }else{
+                    newWidth=img.width*hratio
+                    ratio=hratio
+                }
+        
+                canvas.width = w;
+                canvas.height = h;
+        
+                // 绘制裁剪后的图片
+                console.log(left, top);
+                ctx.drawImage(img, left, top, newWidth, newHeight);
+        
+                // 执行回调函数并传递裁剪后的图片数据URL
+                target.src=(canvas.toDataURL('image/png'));
+                
+                image.style.display="none"
+            };
+        }
+ 
+        function changeSize(){
+            var size = document.getElementById('size');
+            var sizes=JSON.parse(size.value);
+            document.getElementById("width").value=sizes[0];
+            document.getElementById("height").value=sizes[1];
+        }
+
+        function init(){
+ 
+            changeSize()
+
+            var fileInput = document.getElementById('file-input');
+            var image = document.getElementById('image');
+            fileInput.addEventListener('change', function() {
+                var file = fileInput.files[0];
+                var reader = new FileReader();
+                reader.onload = function(e) {
+                    image.src = e.target.result;
+                    resetImage()
+                };
+                reader.readAsDataURL(file);
+            });
+        }
+
+
+
+
+
+    </script>
+    <style>
+ 
+    </style>
+</head>
+
+<body onload="init()"> 
+    上传文件：<input type="file" id="file-input" /><br>
+    证件类型：<select id="size" onchange="changeSize();resetImage()">
+        <option value="[260,378]" selected>小一寸</option>
+        <option value="[295,413]">一寸</option>
+        <option value="[390,576]">大一寸</option>
+        <option value="[413,531]">小二寸</option>
+        <option value="[413,579]">二寸</option>
+        <option value="[413,626]">大二寸</option>
+        <option value="[650,992]">三寸</option>
+        <option value="[898,1181]">四寸</option> 
+        <option value="[358,441]">社保卡</option>
+        <option value="[780,1134]">驾驶证</option>
+    </select><br>
+    证件背景：<select id="color" onchange="resetImage()">
+        <option value="#a1190d" selected>红色背景</option>
+        <option value="#438edb">蓝色背景</option>
+        <option value="#FFFFFF">白色背景</option> 
+    </select><br>
+    裁剪尺寸：<input type="text" id="width" />     <input type="text" id="height" /><br>
+    偏移尺寸：<input type="text" id="left"  value="0" />      <input type="text" id="top"  value="0" /><br>
+ 
+<div>
+    <img id="target"  />
+</div>
+
+<div >
+    <img id="image" style="display: none;" />
+</div>
+
+</body>
+
+</html>
