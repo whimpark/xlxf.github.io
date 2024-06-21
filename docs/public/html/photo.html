@@ -13,11 +13,11 @@
             image.style.display=""
 
             html2canvas(image).then(canvas => { 
-                console.log("asdfasdf");
                 var target = document.getElementById("target")
                 
+                var quality = document.getElementById('quality').value;
                 var type = document.getElementById('type').value;
-                var base64String = canvas.toDataURL('image/'+type);
+                var base64String = canvas.toDataURL('image/'+type, parseFloat(quality));
                 target.src = base64String; 
                 image.style.display="none"
 
@@ -66,8 +66,9 @@
                 ctx.drawImage(img, left, top, newWidth, newHeight);
         
                 // 执行回调函数并传递裁剪后的图片数据URL
+                var quality = document.getElementById('quality').value;
                 var type = document.getElementById('type').value;
-                var base64String = canvas.toDataURL('image/'+type);
+                var base64String = canvas.toDataURL('image/'+type, parseFloat(quality));
                 target.src=base64String;
                 
                 image.style.display="none"
@@ -129,7 +130,20 @@
     </select><br>
     图片类型：<select id="type" onchange="resetImage()">
         <option value="png" selected>PNG</option>
-        <option value="jpg">JPG</option>
+        <option value="jpeg">JPG</option>
+    </select><br>
+    图片质量：<select id="quality" onchange="resetImage()">
+        <option value="1.0" >1.0</option>
+        <option value="0.99" selected>0.99</option>
+        <option value="0.9" >0.9</option>
+        <option value="0.8" >0.8</option>
+        <option value="0.7" >0.7</option>
+        <option value="0.6" >0.6</option>
+        <option value="0.5" >0.5</option>
+        <option value="0.4" >0.4</option>
+        <option value="0.3" >0.3</option>
+        <option value="0.2" >0.2</option>
+        <option value="0.1" >0.1</option> 
     </select><br>
     裁剪尺寸：<input type="text" id="width" />     <input type="text" id="height" /><br>
     偏移尺寸：<input type="text" id="left"  value="0" />      <input type="text" id="top"  value="0" /><br>
