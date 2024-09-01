@@ -1,16 +1,28 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
     <title>二维码扫描示例</title> 
     <script src="./html5-qrcode.min.v2.3.0.js"></script>
 </head>
-<body>
-    <div style="width: 500px" id="reader"></div>
+<body >
+    
+    <div  >
+        <br>
+        扫描结果：<span id="result" style="font-weight: bold; color: #00AA00;"></span>
+        <br>
+        <br>
+    </div>
+    <div style="display: flex;justify-content: center;">
+        <div style="width: 100%" id="reader"></div>
+    </div>
     <script>
 
         function onScanSuccess(decodedText, decodedResult) {
             // Handle on success condition with the decoded text or result.
             console.log(`Scan result: ${decodedText}`, decodedResult);
+            document.getElementById("result").innerText=decodedText;
+            html5QrcodeScanner.clear();
         }
 
         var html5QrcodeScanner = new Html5QrcodeScanner(
